@@ -60,4 +60,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-For any questions or inquiries, please reach out to Lendon B at Telegram : @lendon1114, Email : lendonbracewell1114@gmail.com
+For any questions or inquiries, please reach out to Lendon B at Telegram : https://t.me/lendon1114, Email : lendonbracewell1114@gmail.com
