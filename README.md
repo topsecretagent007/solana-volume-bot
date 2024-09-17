@@ -1,63 +1,93 @@
-# Volume Bot for Solana
+# Raydium Pairs Volume Bot
 
-## Project Description
+This bot is designed to automate the distribution of SOL to multiple wallets and execute endless buy and sell swap transactions simultaneously on the Raydium platform. It leverages Solana's blockchain technology to perform these operations efficiently.
 
-The Volume Bot for Solana is a powerful tool designed to analyze and monitor trading volumes on the Solana blockchain. This bot helps traders and analysts to efficiently track real-time data, gain insights, and make informed decisions based on volume fluctuations across various tokens and markets.
-
-## Table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Features](#features)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
-
-## Installation
-
-To install and run this project locally, follow these steps:
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Lendon-B/Volume_Bot_solana_private.git
-   cd Volume_Bot_solana_private
-   ```
-
-2. Install the necessary dependencies:
-   ```bash
-   npm install
-   ```
-
-   Ensure you have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed before proceeding.
-
-3. Configure environment variables:
-   Create a `.env` file in the root directory and provide the necessary API keys and configurations as required by the bot.
-
-## Usage
-
-After installation, you can start the bot by running the following command:
-
-```bash
-npm start
-```
-
-The bot will start monitoring the specified Solana markets for volume changes and provide analytical data in the console output.
+## This product is trying to show the basic functions of volume bot, and not suitable for big live tokens. So, if you want better version, you can refer to version 2 in my github.
 
 ## Features
 
-- Real-time volume monitoring on Solana blockchain
-- User-friendly interface for tracking multiple tokens
-- Configurable settings for custom alerts and notifications
-- High performance and low latency operations
+- **Automated SOL Distribution**: Distributes SOL to new wallets.
+- **Endless Buy and Sell Swaps**: Performs simultaneous buy and sell transactions.
+- **Configurable Parameters**: Allows customization of buy amounts, intervals, distribution settings, and more.
+- **Massive Buy Mode**: Enables the configuration of multiple wallets for large-scale buy operations.
+- **Sell Mode**: Gradually sells all tokens in sub-wallets through small transactions.
+- **Token Pair Settings**: Configurable token mint and pool ID for swap operations.
+- **Logging**: Supports adjustable logging levels for better monitoring and debugging.
 
-## Contributing
+## Environment Variables
 
-Contributions are welcome! If you'd like to contribute to the project, please fork the repository, make your changes, and submit a pull request. Please ensure your contributions align with the project's goals and follow the coding conventions.
+The bot uses the following environment variables, which should be defined in a `.env` file:
 
-## License
+```env
+PRIVATE_KEY=                 # Private key for the main wallet
+RPC_ENDPOINT=                # RPC endpoint for Solana
+RPC_WEBSOCKET_ENDPOINT=      # RPC WebSocket endpoint for Solana
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+####### BUY SETTING #######
+IS_RANDOM=true               # Enable random buy amounts
+DISTRIBUTION_AMOUNT=0.01     # Amount of SOL to distribute to each wallet
+BUY_AMOUNT=0.01              # Fixed buy amount
+BUY_UPPER_AMOUNT=0.002       # Upper limit for random buy amount
+BUY_LOWER_AMOUNT=0.001       # Lower limit for random buy amount
 
-## Contact
+BUY_INTERVAL_MAX=2000        # Maximum interval between buys in milliseconds
+BUY_INTERVAL_MIN=4000        # Minimum interval between buys in milliseconds
 
-For any questions or inquiries, please reach out to Lendon B at Telegram : https://t.me/lendon1114, Email : lendonbracewell1114@gmail.com
+CHECK_BAL_INTERVAL=3000      # Interval to check wallet balances in milliseconds
+DISTRIBUTE_WALLET_NUM=8      # Number of wallets to distribute SOL to
+
+SWAP_ROUTING=true            # Enable swap routing
+
+###### FOR MASSIVE BUY #####
+WALLET_NUM=8                 # Number of wallets for massive buy operations
+
+########## FOR SELL MODE ##########
+SELL_ALL_BY_TIMES=20         # Number of times to sell all tokens in sub-wallets gradually
+SELL_PERCENT=100             # Percentage of tokens to sell from the main wallet
+
+#### TOKEN PAIR SETTING ####
+TOKEN_MINT=6VbEGuqwhjdgV9NxhMhvRkrFqXVNk53CvD7hK3C3yQS9  # Token mint address
+POOL_ID=null                  # Pool ID for the token pair
+
+TX_FEE=10                    # Transaction fee
+ADDITIONAL_FEE=0.006         # Additional fee (should be larger than 0.006 SOL)
+JITO_KEY=                    # Jito key
+JITO_FEE=120000              # Jito fee
+BLOCKENGINE_URL=ny.mainnet.block-engine.jito.wtf  # Block engine URL
+
+###### GENERAL SETTING ######
+LOG_LEVEL=info               # Logging level (info, debug, error)
+```
+
+## Usage
+1. Clone the repository
+```
+git clone https://github.com/Lamoerey/Volume-Bot_Raydium_Solana.git
+cd volume-bot_raydium
+```
+2. Install dependencies
+```
+npm install
+```
+3. Configure the environment variables
+
+Rename the .env.copy file to .env and set RPC and WSS, main keypair's secret key, and jito auth keypair.
+
+4. Run the bot
+
+```
+npm start
+```
+
+
+## Author
+
+
+
+Twitter: [@Lamoerey](https://twitter.com/Lamoerey)
+
+
+Telegram: [@Lamoerey](https://t.me/Lamoerey)
+
+
+You can always find me here, for help, or for other projects.
